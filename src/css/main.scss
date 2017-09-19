@@ -1,0 +1,752 @@
+/**
+ * Project: Project name 
+ * File:    Main SCSS
+ */
+@import 'modules/_fonts';
+@import 'modules/_typography';
+@import 'modules/_palette';
+@import 'modules/_grid-system';
+@import 'modules/_breakpoints';
+
+// Optional side margins
+@import 'modules/_mq';
+@import 'modules/_side-margins';
+
+
+$brexit-yellow: #feec00;
+$brexit-cyan: #06baed;
+$brexit-navy: #013f78;
+
+
+// Setup page
+body {
+    margin: 0;
+    padding: 0;
+}
+
+// Remove <figure> margin
+.interactive {
+    margin: 0;
+}
+
+// Note: Access images using absolute '/imgs/' paths
+.gv-wrapper {
+    margin: 0 auto;
+    //  border-top: 1px solid #767676;
+    
+    // Breakpoints
+    @include mq(tablet) {
+        max-width: gs-span(9) + $gs-gutter*2;
+    }
+
+    @include mq(desktop) {
+        max-width: 980px;
+    }
+      @include mq(wide) {
+        max-width:  1300px;
+    }
+
+    // @include mq(leftCol) {
+    
+    //     padding-left: 0;
+    //     padding-right: 0;
+    //     max-width: gs-span(14) + $gs-gutter*2;
+    // }
+    // @include mq(wide) {
+    //     width: gs-span(16) + $gs-gutter*2;
+    //     max-width: none;
+    // }
+}
+
+.gv-header {
+    padding: 10px $gs-gutter;
+    margin: 0;
+    
+    //  @include mq(desktop) {
+    //     max-width: gs-span(12) + $gs-gutter*2;
+    // }
+    
+}
+
+.gv-guardian-logo {
+    float: right;
+    width: 80px;
+}
+
+.gv-table {
+    margin: 10px auto;
+    max-width: 500px;
+    @include fs-textSans(3);
+}
+
+#selectors {
+     padding-top: 10px;
+}
+
+#policylist {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#policylist li {
+    list-style: none;
+    padding: 0;
+    margin:20px 0 0 0;
+    border-top: 1px solid #dcdcdc;
+    @include mq(wide) {
+       // padding-left: 240px;
+    }
+
+}
+
+
+
+// #policylist li h2 {
+//     display: block;
+//     border-top: 1px solid #dcdcdc;
+//     margin-top: 50px;
+//     color: #000;
+//     font-family:'Guardian Egyptian Web', Georgia, serif;
+//     font-weight: bold;
+//     font-size: 20px;
+    
+//     @include mq(wide) {
+//        width: 100%;
+//        float: left;
+//     }
+    
+// }
+
+.pol-item-header{
+  width:100%;
+  height: auto;
+  padding-bottom: 18px;
+  padding-left:0;
+
+  @include mq(leftCol){
+        padding-left: 160px;
+  }
+
+  @include mq(wide){
+        padding-left: 240px;
+  }
+
+  h2 {
+    display: block;
+    
+    margin-top: 50px;
+    color: #000;
+    font-family:'Guardian Egyptian Web', Georgia, serif;
+    font-weight: bold;
+    font-size: 24px;
+    
+    // @include mq(wide) {
+    //    width: 100%;
+    //    float: left;
+    // }
+    
+  }
+}
+
+#policylist h2:first-of-type {
+    margin-top: 0;
+}
+
+.viewpoints-wrapper {
+     margin-left: -5px;
+     width:-webkit-calc(100% - 10px);
+     width: calc(100% - 10px);
+   @include mq(desktop) {
+       display: table;
+       table-layout: fixed;
+       border-collapse: separate;
+       border-spacing: 10px 0;
+       margin:0 -10px;
+       width:100.57%;
+        width:-webkit-calc(100% + 20px);
+        width:calc(100% + 20px);
+   }
+   
+    @include mq(wide) {
+        display: table;
+       table-layout: fixed;
+       border-collapse: separate;
+       border-spacing: 10px 0;
+       margin:0 -10px;
+        
+      width:-webkit-calc(100% - 0px);
+      width:calc(100% - 0px);
+       
+    }
+    
+}
+
+.viewpoint {
+    vertical-align: top;
+    display: inline-block;
+    background-color: $brexit-cyan;
+    margin: 5px;
+    margin-bottom: 18px;
+    // width: 220px;
+    width: 100%;
+    height: 100%;
+    word-wrap: break-word;
+    border-radius: 5px;
+
+    
+   @include mq(desktop) {
+       display: table-cell;
+       width: 33%;
+   }
+}
+
+
+
+.viewpoint p {
+    word-wrap: break-word;
+    padding: 0 10px;
+    // font-family:'Guardian Text Sans Web', Arial, sans-serif;
+    font-size: 14px;
+    color: #767676;
+        color:#FFF;
+}
+
+
+
+.viewpoint-head img {
+    width: 60px;
+    height: 60px;
+    float: left;
+    margin: -9px 10px 0 10px;
+    background: #767676;
+    border-radius: 50%;
+}
+
+.viewpoint-head strong {
+    font-weight: bold;
+    display: block;
+    font-size: 16px;
+    padding: 0;
+    font-family:'Guardian Egyptian Web', Georgia, serif;
+    color:#FFF;
+}
+
+.viewpoint-head em {
+    color: #000;
+    font-weight: normal;
+    display: block;
+    font-style: normal;
+    font-size: 16px;
+    font-family:'Guardian Egyptian Web', Georgia, serif;
+        color:#FFF;
+}
+
+.selector {
+    display: inline-block;
+    margin: 0 15px 10px 0;
+    padding: 5px 10px;
+    cursor: pointer;
+    color: #FFF;
+    font-size: 14px;
+    background: $brexit-cyan;
+    font-family:'Guardian Text Sans Web', Arial, sans-serif;
+    border-radius: 15px;
+
+    a{
+      color:#FFF !important;
+    }
+}
+
+.selector.highlighted {
+    background: $brexit-yellow;
+    color: #222;
+     a{
+      color: #222 !important;
+    }
+}
+
+.selector:hover {
+   text-decoration: underline;
+}
+
+.content--interactive .byline {
+    
+    display: block;
+}
+
+#policylist li.highlighted .viewpoints-wrapper .viewpoint {
+    background-color: $brexit-yellow;
+    color:#222 !important;
+    p,em,strong{
+      color:#222 !important;
+    }
+    
+}
+
+.viewpoint-head-txt{
+      padding-top: 3px;
+    margin-left: 80px;
+}
+
+#intro .info-button {
+     display: block;
+    padding: 4px 10px;
+    cursor: pointer;
+    color: #333;
+    font-size: 12px;
+    background: #dcdcdc;
+    font-family:'Guardian Text Sans Web', Arial, sans-serif;
+    border-radius: 15px;
+    text-align: center;
+    min-width: 35px;
+    margin-top: 5px;
+    bottom: 0;
+    position: absolute;
+    line-height: 1.2em;
+      @include mq(mobileLandscape) {
+         width: 80px;
+   }
+}
+
+
+#intro .summary:hover .info-button {
+     background: #767676;
+     color: #fff;
+     
+}
+
+#intro {
+    width: 100%;
+    background: #b51800;
+     display: table;
+       table-layout: fixed;
+       border-collapse: separate;
+       border-spacing: 10px 0;
+       margin:0 -10px;
+       width:100.57%;
+        width:-webkit-calc(100% + 20px);
+        width:calc(100% + 20px);
+        padding: 10px 0 20px 0;
+        
+    @include mq(mobileLandscape) {
+        margin:0 -20px;
+         padding: 10px 10px 20px 10px;
+   }
+   
+   @include mq(phablet) {
+        margin:0 -20px;
+         padding: 10px 10px 20px 10px;
+   }
+   
+   @include mq(tablet) {
+        margin:0 -20px;
+         padding: 10px 10px 20px 10px;
+   }
+    
+    @include mq(desktop) {
+       display: table;
+       table-layout: fixed;
+       border-collapse: separate;
+       border-spacing: 10px 0;
+       margin: 0px 0px 0px -20px;
+       width:100.57%;
+        width:-webkit-calc(100% + 30px);
+        width:calc(100% + 30px);
+        padding: 10px 0 20px 10px;
+        margin:0 -20px;
+   }
+   
+   @include mq(wide) {
+       display: table;
+       table-layout: fixed;
+       border-collapse: separate;
+       border-spacing: 10px 0;
+       margin: 0px 0px 0px -20px;
+       width:100.57%;
+        width:-webkit-calc(100% + 20px);
+        width:calc(100% + 20px);
+        padding: 10px 20px 20px 0;
+        margin:0 -20px;
+   }
+}
+
+#intro .summary {
+    position: relative;
+    vertical-align: top;
+     display: table-cell;
+    margin: 5px;
+    // width: 220px;
+    //width: 100%;
+    height: 100%;
+    word-wrap: break-word;
+     display: table-cell;
+       width: 25%;
+       padding-bottom: 30px;
+       
+   @include mq(mobileLandscape) {
+       padding-bottom: 8px;
+   }
+    
+   @include mq(desktop) {
+       display: table-cell;
+       width: 25%;
+       padding-bottom: 30px;
+   }
+   
+      @include mq(wide) {
+       display: table-cell;
+       width: 21.5%;
+       
+    }
+   
+}
+
+#intro #summary-padder {
+    display: none;
+    
+     @include mq(wide) {
+       display: table-cell;
+       width: 21%;
+        //padding-right: 10px;
+        position: relative;
+    vertical-align: top;
+    }
+    
+}
+
+#intro .summary:hover {
+    cursor: pointer;
+}
+
+#intro:hover img {
+    // opacity: 0.7;
+}
+
+#intro .summary .intro-image-wrapper {
+    vertical-align: top;
+    background: #ffffff;
+    position: relative;
+    width:95%;
+    overflow: hidden;
+    border-radius: 50%;
+     @include mq(phablet) {
+    width:90%;   
+     }
+     @include mq(desktop) {
+    width:70%;   
+     }
+}
+
+#intro .summary:hover .intro-image-wrapper:not(.highlighted) {
+    // text-decoration: underline;
+    // border: 4px solid #e31f26;
+    background-color: #e1a399;
+     box-sizing: border-box;
+}
+
+#intro .highlighted {
+    // background-color: #b2ccdb;
+     box-sizing: border-box;
+    //  border-bottom: 20px solid #d9e6ed;
+    margin-bottom: 30px;
+}
+
+#intro .intro-image-wrapper.highlighted {
+    background-color: #fff;  
+}
+
+#intro .intro-image-wrapper.highlighted .color-image {
+    display: block;
+}
+
+#intro .intro-image-wrapper.highlighted .tint-image {
+    display: none;
+}
+
+#intro .intro-image-wrapper-wrapper {
+    position: relative;
+}
+
+//#intro .intro-image-wrapper.highlighted:after {
+#intro .summary.highlighted .intro-image-wrapper-wrapper:after {
+  bottom: 0;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+  border-bottom-color: #f0d1cc;
+  border-width: 30px;
+  left: 50%;
+  margin: 0 0 -35px -30px;
+  vertical-align: top;
+  
+  @include mq(phablet) {
+     margin: 0 0 -35px -40px; 
+    }
+    
+  @include mq(tablet) {
+      
+   
+    }
+  
+   @include mq(desktop) {
+        
+     margin: 0 0 -35px -65px; 
+    }
+}
+
+
+#intro .summary:hover h3 {
+    // text-decoration: underline;
+    //color: #e31f26;
+    //font-weight: bold;
+   
+}
+
+#intro .summary:hover p {
+    // text-decoration: underline;
+    //color: #e31f26;
+    font-weight: normal;
+   
+}
+
+#intro .summary h3 {
+    position: relative;
+    color: #fff;
+    font-size: 13px;
+    font-weight: bold;
+    margin-top: 12px;
+    line-height: 1.1em;
+    display: block;
+    font-family:'Guardian Egyptian Web', Georgia, serif;
+    @include mq(mobileLandscape) {
+      font-size: 18px;
+   }
+     @include mq(desktop) {
+     display: block;
+     font-size: 28px;
+     font-weight: normal;   
+     }
+}
+
+#intro .summary p {
+    // font-style: italic;
+    display: none;
+    color: #000;
+    font-family:'Guardian Egyptian Web', Georgia, serif;
+   @include mq(mobileLandscape) {
+      display: inline-block;
+   }
+     @include mq(desktop) {
+       display: inline;
+   }
+}
+
+#intro .summary img {
+    width: 100%;
+    // padding-right: 5%;
+    // padding-left: 10%;
+    vertical-align: top;
+}
+
+#intro .summary .color-image {
+   display: none;
+}
+
+#intro .summary .tint-image {
+   opacity: 0.8;
+}
+
+#detail-summary {
+    position: relative;
+    display: none;
+    vertical-align: top;
+     background-color: #f0d1cc;
+    padding: 20px;
+    margin-bottom: 12px;
+    margin-top: -50px;
+       @include mq(mobileLandscape) {
+        margin-top: -32px;
+   }
+     @include mq(desktop) {
+       display: none;
+        margin-top: -50px;
+   }
+}
+
+#detail-summary .intro-section .full-profile-link {
+     display: block;
+    padding: 4px 10px;
+    cursor: pointer;
+   color: #fff;
+    font-size: 12px;
+    background: #767676;
+    font-family:'Guardian Text Sans Web', Arial, sans-serif;
+    border-radius: 15px;
+    text-align: center;
+    width: 120px;
+    margin-top: 5px;
+    margin-bottom: 20px;
+     @include mq(desktop) {
+         
+      margin-left: 25%;
+   }
+}
+
+
+#detail-summary .intro-section .full-profile-link:hover {
+    //  background: #fff;
+    //  color: #fff;
+     
+}
+
+#detail-summary h3  {
+     width: 100%;
+       color: #b51800;
+       font-size: 28px;
+       line-height: 1em;
+       font-weight: bold;
+       padding: 0 0 20px 0;
+        font-family:'Guardian Egyptian Web', Georgia, serif;
+    
+     @include mq(desktop) {
+      
+   }
+}
+
+#detail-summary h5  {
+     vertical-align: top;
+        display: inline-block;
+       font-family:'Guardian Egyptian Web', Georgia, serif;
+        font-size: 16px;
+        color: #000;
+     @include mq(desktop) {
+          width: 25%;
+   }
+   
+    @include mq(wide) {
+         width: 18%;
+     }
+}
+
+#detail-summary p  {
+    padding-bottom: 10px;
+    font-size: 14px;
+     @include mq(desktop) {
+       font-size: 16px;
+       width: 75%;
+       display: inline-block;
+       padding-bottom: 20px;
+   }
+}
+
+#detail-summary:after  {
+    display: block;
+    content: "";
+    width: 100%;
+     clear: both;
+}
+
+#detail-summary #close-button {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    top: 10px;
+    right: 10px;
+    background-image: url('/imgs/close.png');
+    background-size: 25px 25px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    border: 1px solid #000;
+    border-radius: 50%;
+    opacity: 0.7;
+    
+}
+
+
+img.desaturate {
+//-webkit-filter: grayscale(100%) opacity(0.7);
+//filter: grayscale(100%) opacity(0.7);
+//filter: gray opacity(0.7);
+//filter: url("data:image/svg+xml;utf8,<svg version='1.1' xmlns='http://www.w3.org/2000/svg' height='0'><filter id='greyscale'><feColorMatrix type='matrix' values='0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0' /></filter></svg>#greyscale") opacity(0.7);
+}
+
+.sans-para {
+    color: #000;
+    font-weight: bold;
+   font-size: 20px;
+}
+
+.sans-para.bordertop {
+    border-top: 1px solid #dcdcdc;
+    padding-top: 5px;
+    font-family:'Guardian Egyptian Web', Georgia, serif;
+    
+     @include mq(wide) {
+        border-top: none; 
+     }
+    
+  
+}
+
+.issues-label {
+
+  @include mq(wide) {
+      vertical-align: top;
+     display: inline-block;
+       width: 18%;
+       margin: -2px 10px 0 0;
+    }
+    
+}
+
+#issues-rule {
+  display: none;
+
+  @include mq(wide) {
+     display: block;
+       width: 100%;
+       border-top: 1px solid #dcdcdc;
+    }
+    
+}
+
+#selectors {
+  width: 100%;
+  @include mq(leftCol){
+    vertical-align: top;
+       display: inline-block;
+          margin-left:160px;
+      }
+  @include mq(wide) {
+        margin-left:240px;
+    }
+    
+}
+
+#intro .mobile-show {
+     display: inline;
+     @include mq(mobileLandscape) {
+       display: none;
+   }
+}
+
+#intro .desktop-show {
+    display: none;
+     @include mq(mobileLandscape) {
+       display: inline;
+   }
+}
+
+//crush app styles
+.prose ul > li:before{
+  display: none !important;
+}
+
+
+
+
