@@ -211,7 +211,7 @@ body {
 
 .viewpoint p {
     word-wrap: break-word;
-    padding: 0 10px;
+    padding: 6px 10px 3px;
     // font-family:'Guardian Text Sans Web', Arial, sans-serif;
     font-size: 14px;
     color: #767676;
@@ -248,7 +248,7 @@ body {
 
 .viewpoint-head em {
     color: #000;
-    font-weight: normal;
+    font-weight: 500;
     display: block;
     font-style: normal;
     font-size: 16px;
@@ -310,7 +310,7 @@ body {
     cursor: pointer;
     color: #333;
     font-size: 12px;
-    background: #dcdcdc;
+    background: #eee;
     font-family:'Guardian Text Sans Web', Arial, sans-serif;
     border-radius: 15px;
     text-align: center;
