@@ -110,6 +110,9 @@ function listviewpoints(policy, policylist) {
 	//policylist.appendChild(policyListWrapper);
 	for (var i = 0; i < viewpoints.length; i++) {
 		var viewpoint = viewpoints[i];
+		if(typeof viewpoint.summary!="undefined"){ viewpoint.summary = viewpoint.summary }else{
+			viewpoint.summary = " "
+		}
 	// 	var viewpointlist = document.getElementById(policy.name);
 		var item = document.createElement("div");
 		item.setAttribute("class", "viewpoint");
@@ -117,9 +120,16 @@ function listviewpoints(policy, policylist) {
 		var subkicker = "<em>" + viewpoint.summary + "</em>";
 		var itemcontents = viewpoint.description;
 		var headshot = viewpoint.headshot;
-		var htmlString = "<div class='viewpoint-head'><img src='https://interactive.guim.co.uk/2017/sep/brexit-imgs/bw-" + viewpoint.headshot + "' alt='' /><div class='viewpoint-head-txt'>" + kicker + subkicker + "</div></div><p>" + itemcontents + "</p>";
-		//var htmlString = "<p><img src='/imgs/cooper-colorized.jpg' alt='' />" + kicker + itemcontents + "</p>";
-		//console.log("This=" + htmlString);
+
+		
+
+
+		console.log(viewpoint.summary)
+
+	
+
+		var htmlString = "<div class='viewpoint-head'><div class='viewpoint-head-img' style='background-image:url(https://interactive.guim.co.uk/2017/sep/brexit-imgs/bw-" + viewpoint.headshot +");'></div><div class='viewpoint-head-txt'>" + kicker + subkicker + "</div></div><p>" + itemcontents + "</p>";
+
 		policyListWrapper.appendChild(item);
 		item.innerHTML = htmlString;
 	}

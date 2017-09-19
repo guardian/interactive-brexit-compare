@@ -2,7 +2,7 @@
  * Project: Project name 
  * File:    Main SCSS
  */
-@import 'modules/_fonts';
+
 @import 'modules/_typography';
 @import 'modules/_palette';
 @import 'modules/_grid-system';
@@ -22,6 +22,13 @@ $brexit-navy: #013f78;
 body {
     margin: 0;
     padding: 0;
+}
+
+.element{
+  .interactive{
+
+  }
+
 }
 
 // Remove <figure> margin
@@ -119,7 +126,6 @@ body {
 // }
 
 .pol-item-header{
-  width:100%;
   height: auto;
   padding-bottom: 18px;
   padding-left:0;
@@ -138,8 +144,8 @@ body {
     margin-top: 50px;
     color: #000;
     font-family:'Guardian Egyptian Web', Georgia, serif;
-    font-weight: bold;
-    font-size: 24px;
+    font-weight: normal;
+    font-size: 30px;
     
     // @include mq(wide) {
     //    width: 100%;
@@ -197,7 +203,7 @@ body {
     
    @include mq(desktop) {
        display: table-cell;
-       width: 33%;
+       width: 25%;
    }
 }
 
@@ -209,27 +215,35 @@ body {
     // font-family:'Guardian Text Sans Web', Arial, sans-serif;
     font-size: 14px;
     color: #767676;
-        color:#FFF;
+    color:#222;
 }
 
+.viewpoint-head{
+  position:relative;
+}
 
-
-.viewpoint-head img {
+.viewpoint-head-img {
+    position:absolute;
+    top:-9px;
     width: 60px;
     height: 60px;
     float: left;
-    margin: -9px 10px 0 10px;
-    background: #767676;
+    margin: 0 10px 0 10px;
+    background-color: none;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
     border-radius: 50%;
+   
 }
 
 .viewpoint-head strong {
-    font-weight: bold;
+    font-weight: 600;
     display: block;
-    font-size: 16px;
+    font-size: 22px;
+    line-height: 28px;
     padding: 0;
-    font-family:'Guardian Egyptian Web', Georgia, serif;
-    color:#FFF;
+    font-family: Guardian Egyptian Web,Georgia,serif;
+    color: #222;
 }
 
 .viewpoint-head em {
@@ -239,7 +253,9 @@ body {
     font-style: normal;
     font-size: 16px;
     font-family:'Guardian Egyptian Web', Georgia, serif;
-        color:#FFF;
+    color:#222;
+    min-height:24px;
+    min-width: 10px;
 }
 
 .selector {
@@ -270,10 +286,9 @@ body {
    text-decoration: underline;
 }
 
-.content--interactive .byline {
-    
-    display: block;
-}
+// .content--interactive .byline {
+//     display: block;
+// }
 
 #policylist li.highlighted .viewpoints-wrapper .viewpoint {
     background-color: $brexit-yellow;
@@ -716,7 +731,7 @@ img.desaturate {
 }
 
 #selectors {
-  width: 100%;
+
   @include mq(leftCol){
     vertical-align: top;
        display: inline-block;
